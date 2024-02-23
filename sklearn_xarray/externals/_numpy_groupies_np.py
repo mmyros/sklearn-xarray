@@ -271,7 +271,7 @@ else:
         return minimum_dtype(x, dtype)
 
     _forced_types = {
-        "array": np.object,
+        "array": object,
         "all": np.bool_,
         "any": np.bool_,
         "nanall": np.bool_,
