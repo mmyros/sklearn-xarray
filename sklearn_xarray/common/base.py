@@ -196,6 +196,7 @@ class _CommonEstimatorWrapper(BaseEstimator):
                     self.estimator_, method, X
                 )
                 coords = self._update_coords(X)
+                coords = {key:coor for key, coor in coords.items() if not isinstance(coor, tuple) or coor[0]!=[] }
                 return xr.DataArray(data, coords=coords, dims=dims)
             else:
                 return xr.DataArray(
